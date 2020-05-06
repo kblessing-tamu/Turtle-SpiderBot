@@ -158,7 +158,10 @@ body {
 
 
 
-@media all and (max-width:30em) {
+@media only screen  
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
   
 
     .collapse{
