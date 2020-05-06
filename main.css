@@ -150,9 +150,7 @@ body {
 
 
 @media all and (max-width:30em) {
-    .button {
-        margin: 0.4em auto;
-    }
+  
 
     .output {
         bottom: 0px;
@@ -161,7 +159,7 @@ body {
     }
 
     .clear {
-        bottom: 246px;
+        bottom: 29.5vh;
         right: 23px;
         top: auto;
     }
