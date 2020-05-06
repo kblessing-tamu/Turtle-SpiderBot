@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 var percent, slider, output,clear,collapse;
 var max = 100;
 
@@ -84,3 +85,68 @@ window.onload = function () {
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
   }
+=======
+var percent, slider,output;
+
+
+
+window.onload = function(){
+
+    percent = document.getElementById("percentage");
+
+    slider = document.getElementById("myRange");
+
+    output = document.getElementById("output");
+
+    percent.innerHTML = slider.value;
+
+
+
+
+
+    slider.oninput = function() {   
+
+        percent.innerHTML = slider.value; 
+
+    }
+
+
+
+    document.getElementById("setSpeed").addEventListener("click", function(){
+
+        output.innerHTML+= "Speed Set: " + slider.value + "%<br>";
+
+        output.scrollTop = output.scrollHeight;
+
+    });
+
+
+
+    document.getElementById("kill").addEventListener("click", function(){
+
+        slider.value = 0;
+
+        percent.innerHTML = slider.value; 
+
+        output.innerHTML+= "Speed Set: " + slider.value + "%<br>";
+
+        output.scrollTop = output.scrollHeight;
+
+    });
+
+
+
+    document.getElementById("clear").addEventListener("click", function(){
+
+        output.innerHTML = "";
+
+        console.log("woking");
+
+    });
+
+}
+
+
+
+
+>>>>>>> Stashed changes

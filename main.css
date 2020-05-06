@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 body {
     background-image: url('electronicdesign_16021_intel_drones_promo_1.png');
     background-repeat: no-repeat;
@@ -206,3 +207,312 @@ body {
         top: auto;
     }
 }
+=======
+body {
+
+    background-image: url('electronicdesign_16021_intel_drones_promo_1.png');
+
+    background-repeat: no-repeat;
+
+    background-size: 100%;
+
+    object-fit: cover;
+
+}
+
+
+
+.menu {
+
+    width: 35px;
+
+    height: 5px;
+
+    background-color: black;
+
+    margin: 6px 0;
+
+    position: relative;
+
+}
+
+
+
+.button {
+
+    display: inline-block;
+
+    padding: 0.7em 1.4em;
+
+    margin: 0 0.3em 0.3em 0;
+
+    border-radius: 0.15em;
+
+    box-sizing: border-box;
+
+    text-decoration: none;
+
+    font-family: 'Roboto', sans-serif;
+
+    text-transform: uppercase;
+
+    font-weight: 400;
+
+    color: black;
+
+
+
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+
+    text-align: center;
+
+    position: relative;
+
+
+
+    border: none;
+
+    height: 58px;
+
+    width: 73px;
+
+    overflow: hidden;
+
+    transition: all .5s;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.button:hover {
+
+    width: 300px;
+
+    height: 429px;
+
+
+
+}
+
+
+
+
+
+
+
+.slider {
+
+    writing-mode: bt-lr;
+
+    /* IE */
+
+    background-color: rgba(0, 0, 0, 0.0);
+
+    transform: rotate(270deg);
+
+    -moz-transform: rotate(270deg);
+
+    -webkit-appearance: none;
+
+    /* WebKit */
+
+    height: 300px;
+
+    width: 200px;
+
+    outline: none;
+
+}
+
+
+
+.slider::-webkit-slider-runnable-track {
+
+    background: linear-gradient(to left, red, yellow, green);
+
+
+
+    width: 50px;
+
+    border-radius: 4px;
+
+    transition: .3s;
+
+}
+
+
+
+.slider::-webkit-slider-thumb {
+
+    -webkit-appearance: none;
+
+    appearance: none;
+
+    width: 10px;
+
+    height: 50px;
+
+    background: black;
+
+    cursor: pointer;
+
+}
+
+
+
+.output {
+
+    width: 40vw;
+
+    height: 35vh;
+
+    background-color: black;
+
+    color: white;
+
+    position: absolute;
+
+    right: 10px;
+
+    opacity: .5;
+
+    overflow: auto;
+
+}
+
+
+
+.setSpeed {
+
+    position: relative;
+
+    width: 100px;
+
+    height: 17px;
+
+    right: -171px;
+
+    bottom: 7px;
+
+    padding-top: 10px;
+
+    border-style: outset;
+
+}
+
+
+
+.kill {
+
+    position: relative;
+
+    width: 100px;
+
+    height: 17px;
+
+    right: 0px;
+
+    bottom: 36px;
+
+    padding-top: 10px;
+
+    border-style: outset;
+
+}
+
+
+
+.output::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+
+
+/* Track */
+
+.output::-webkit-scrollbar-track {
+
+    background: #f1f1f1;
+
+}
+
+
+
+/* Handle */
+
+.output::-webkit-scrollbar-thumb {
+
+    background: #888;
+
+}
+
+
+
+
+
+.clear{
+
+    right: 31px;
+
+    top: 17px;
+
+    position: absolute;
+
+    border-style: solid;
+
+    padding: 3px 5px 3px 5px;
+
+    border-radius: 13px;
+
+    color: white;
+
+}
+
+
+
+@media all and (max-width:30em) {
+
+    .button {
+
+        margin: 0.4em auto;
+
+    }
+
+
+
+    .output {
+
+        bottom: 0px;
+
+        width: 100%;
+
+        right: 0px;
+
+    }
+
+
+
+    .clear{
+
+        bottom: 246px;
+
+        right: 23px;
+
+        top: auto;
+
+    }
+
+}
+
+
+>>>>>>> Stashed changes

@@ -9,13 +9,13 @@ os.system ("sudo pigpiod") #Launching GPIO library
 time.sleep(1) # As i said it is too impatient and so if this delay is removed you will get an error
 import pigpio #importing GPIO library
 
-ESC=4  #Connect the ESC in this GPIO pin 
+ESC=4 #Connect the ESC in this GPIO pin 
 
 pi = pigpio.pi();
 pi.set_servo_pulsewidth(ESC, 0) 
 
 max_value = 2000 #change this if your ESC's max value is different or leave it be
-min_value = 700  #change this if your ESC's min value is different or leave it be
+min_value = 1000  #change this if your ESC's min value is different or leave it be
 print "For first time launch, select calibrate"
 print "Type the exact word for the function you want"
 print "calibrate OR manual OR control OR arm OR stop"
@@ -27,12 +27,12 @@ def manual_drive(): #You will use this function to program your ESC if required
         if inp == "stop":
             stop()
             break
-		elif inp == "control":
-			control()
-			break
-		elif inp == "arm":
-			arm()
-			break	
+        elif inp == "control":
+            control()
+            break
+        elif inp == "arm":
+            arm()
+            break   
         else:
             pi.set_servo_pulsewidth(ESC,inp)
                 
@@ -57,12 +57,12 @@ def calibrate():   #This is the auto calibration procedure of a normal ESC
             pi.set_servo_pulsewidth(ESC, min_value)
             time.sleep(1)
             print "See.... uhhhhh"
-            control() # You can change this to any other function you want
+            manual_drive() # You can change this to any other function you want
             
 def control(): 
     print "I'm Starting the motor, I hope its calibrated and armed, if not restart by giving 'x'"
     time.sleep(1)
-    speed = 1500    # change your speed if you want to.... it should be between 700 - 2000
+    speed = 1000    # change your speed if you want to.... it should be between 700 - 2000
     print "Controls - a to decrease speed & d to increase speed OR q to decrease a lot of speed & e to increase a lot of speed"
     while True:
         pi.set_servo_pulsewidth(ESC, speed)
@@ -86,9 +86,9 @@ def control():
         elif inp == "manual":
             manual_drive()
             break
-		elif inp == "arm":
-			arm()
-			break	
+        elif inp == "arm":
+            arm()
+            break   
         else:
             print "WHAT DID I SAID!! Press a,q,d or e"
             
