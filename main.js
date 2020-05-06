@@ -1,4 +1,4 @@
-var percent, slider, output,clear;
+var percent, slider, output,clear,collapse;
 var max = 100;
 
 window.onload = function () {
@@ -6,6 +6,7 @@ window.onload = function () {
     slider = document.getElementById("myRange");
     output = document.getElementById("output");
     clear = document.getElementById("clear");
+    collapse = document.getElementById('collapse');
     percent.value = slider.value;
 
 
@@ -49,10 +50,12 @@ window.onload = function () {
     });
 
     var outOpen = true;
-    document.getElementById('collapse').addEventListener('click',function (){
+    collapse.addEventListener('click',function (){
         let collapse = document.getElementById('collapse');
         let style = window.getComputedStyle(clear),
             top = style.getPropertyValue('top');
+        
+            
 
         if(outOpen){
             output.style.height = "7vh";
@@ -60,6 +63,7 @@ window.onload = function () {
                 collapse.style.bottom = "1.2vh"
                 clear.style.bottom = "1.5vh";
             }
+            collapse.style.transform = "rotate(180deg)";
             outOpen = !outOpen;
         }else{
             output.style.height = "35vh";
@@ -67,8 +71,12 @@ window.onload = function () {
                 collapse.style.bottom = "29.2vh"
                 clear.style.bottom = "29.5vh";
             }
+            collapse.style.transform = "rotate(0deg)";
             outOpen = !outOpen;
         }
+
+        output.scrollTop = output.scrollHeight;
+
     });
 
 }
