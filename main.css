@@ -147,11 +147,25 @@ body {
     cursor: pointer;
 }
 
+.collapse{
+    position: absolute;
+    color: white;
+    right: 93px;
+    top: 15px;
+    padding: 0px 16px 0px 16px;
+
+}
+
 
 
 @media all and (max-width:30em) {
   
 
+    .collapse{
+        bottom: 29.2vh;
+        right: 84px;
+        top: auto;
+    }
     .output {
         bottom: 0px;
         width: 100%;

@@ -1,10 +1,11 @@
-var percent, slider, output;
+var percent, slider, output,clear;
 var max = 100;
 
 window.onload = function () {
     percent = document.getElementById("percentage");
     slider = document.getElementById("myRange");
     output = document.getElementById("output");
+    clear = document.getElementById("clear");
     percent.value = slider.value;
 
 
@@ -25,7 +26,7 @@ window.onload = function () {
         output.scrollTop = output.scrollHeight;
     });
 
-    document.getElementById("clear").addEventListener("click", function () {
+    clear.addEventListener("click", function () {
         output.innerHTML = "";
     });
 
@@ -44,6 +45,29 @@ window.onload = function () {
             percent.value = 0;
             percent.style.color = "black";
             slider.value = percent.value;
+        }
+    });
+
+    var outOpen = true;
+    document.getElementById('collapse').addEventListener('click',function (){
+        let collapse = document.getElementById('collapse');
+        let style = window.getComputedStyle(clear),
+            top = style.getPropertyValue('top');
+
+        if(outOpen){
+            output.style.height = "7vh";
+            if(top != "17px"){
+                collapse.style.bottom = "1.2vh"
+                clear.style.bottom = "1.5vh";
+            }
+            outOpen = !outOpen;
+        }else{
+            output.style.height = "35vh";
+            if(top != "17px"){
+                collapse.style.bottom = "29.2vh"
+                clear.style.bottom = "29.5vh";
+            }
+            outOpen = !outOpen;
         }
     });
 
