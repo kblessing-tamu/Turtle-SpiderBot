@@ -182,6 +182,12 @@ body {
   and (max-device-width: 1366px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+    .slider::-webkit-slider-thumb {
+        
+        width: 50px;
+        opacity: .55;
+        
+    }
   
 
     .collapse{
