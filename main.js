@@ -176,6 +176,9 @@ window.onload = function () {
     });
 
     let btn = document.getElementById('button');
+    let open = false;
+
+
     document.getElementById("open").addEventListener('click',function(){
         
     if(open){

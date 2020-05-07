@@ -13,10 +13,11 @@
 </head>
 
 <body>
-    <div class="open" id="open"></div>
+    <div class="open" id="open">
+        <div class="openspeed" id ="openspeed"><i class="fa fa-tachometer"></i></i></div>
+    </div>
     <button class="button" id ="button">
-        <img class="engine" id="engine" src="engine.png" > 
-        <div class="engineheader">CHECK</div>
+
         <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
         <input type="text" pattern="[0-9]" id="percentage" maxlength="3" size="3" value="0">
         <p id="p">%</p>
@@ -36,6 +37,9 @@
 
     </button>
 
+    <div class="drive" id="drive">
+
+    </div>
 
     <div class="u" id="u"><div class="arrow up" id="upArrow"></div> </div>
     <div class="l" id="l"><div class="arrow left" id="downArrow"></div> </div>

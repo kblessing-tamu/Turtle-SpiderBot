@@ -1,5 +1,6 @@
 :root {
     --back: #E0E0E0;
+    --front: black;
 }
 
 body {
@@ -9,34 +10,21 @@ body {
     object-fit: cover;
     overflow: hidden;
 }
-
 #p {
     margin-block-start: -2em;
     position: absolute;
     top: 302px;
     left: 172px;
 }
-
-
-.engine {
+.openspeed {
     width: 61px;
     height: auto;
     position: absolute;
-    left: 7px;
+    left: 9px;
     top: -3px;
+    font-size: 54px;
+    color: var(--front);
 }
-
-
-.engineheader {
-    position: absolute;
-    top: 25px;
-    left: 19px;
-    font-weight: 800;
-    font-size: 11px;
-
-}
-
-
 .button {
     display: inline-block;
     padding: 0.7em 1.4em;
@@ -63,31 +51,22 @@ body {
 
 
 }
-
-
-
 .button:hover {
     width: 290px;
     height: 377px;
 
 }
-
 .open{
     position: absolute;
     height: 58px;
     width: 73px;
     z-index: 10;
 }
-
 .open:hover+.button{
     pointer-events: all;
     width: 290px;
     height: 377px;
 }
-
-
-
-
 .slider {
     position: relative;
     left: .5px;
@@ -102,7 +81,6 @@ body {
     width: 200px;
     outline: none;
 }
-
 .slider::-webkit-slider-runnable-track {
     background: linear-gradient(to left, red, yellow, green);
 
@@ -110,7 +88,6 @@ body {
     border-radius: 4px;
     transition: .3s;
 }
-
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -119,7 +96,6 @@ body {
     background: black;
     cursor: pointer;
 }
-
 .output {
     width: 40vw;
     height: 35vh;
@@ -133,7 +109,6 @@ body {
     top: 9px;
     right: 9px;
 }
-
 .setSpeed {
     position: relative;
     width: 100px;
@@ -143,11 +118,9 @@ body {
     padding-top: 17px;
     border-style: outset;
 }
-
 .setSpeed:hover {
     cursor: pointer;
 }
-
 .kill {
     position: relative;
     width: 100px;
@@ -157,27 +130,20 @@ body {
     padding-top: 17px;
     border-style: outset;
 }
-
 .kill:hover {
     cursor: pointer;
 }
-
 .output::-webkit-scrollbar {
     width: 10px;
 }
-
 /* Track */
 .output::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
-
 /* Handle */
 .output::-webkit-scrollbar-thumb {
     background: #888;
 }
-
-
-
 .clear {
     right: 31px;
     top: 17px;
@@ -188,11 +154,9 @@ body {
     color: white;
     transition: all .5s;
 }
-
 .clear:hover {
     cursor: pointer;
 }
-
 .collapse {
     position: absolute;
     color: white;
@@ -203,11 +167,9 @@ body {
     transform: rotate(180deg);
     overflow: hidden;
 }
-
 .collapse:hover {
     cursor: pointer;
 }
-
 #percentage {
     position: absolute;
     text-align: end;
@@ -218,7 +180,6 @@ body {
     background-color: var(--back);
     border-bottom: black solid 2px
 }
-
 .inc1 {
     position: relative;
     top: -261px;
@@ -227,7 +188,6 @@ body {
     padding: 40px 16px 40px 16px;
     border-style: outset;
 }
-
 .inc5 {
     position: relative;
     top: -462px;
@@ -236,8 +196,6 @@ body {
     padding: 40px 16px 40px 16px;
     border-style: outset;
 }
-
-
 .dec1 {
     position: relative;
     top: -462px;
