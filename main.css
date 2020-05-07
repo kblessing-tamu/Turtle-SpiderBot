@@ -316,7 +316,7 @@ body {
     visibility: hidden;
 }
 
-.stop{
+.stop {
     visibility: hidden;
 }
 
@@ -451,25 +451,25 @@ body {
         padding: 32px;
         z-index: 3;
     }
-}
 
-.collapse {
-    bottom: 29.2vh;
-    right: 84px;
-    top: auto;
-}
 
-.output {
-    bottom: 0px;
-    width: 100%;
-    right: 0px;
-    top: auto;
+    .collapse {
+        bottom: 29.2vh;
+        right: 84px;
+        top: auto;
+    }
 
-}
+    .output {
+        bottom: 0px;
+        width: 100%;
+        right: 0px;
+        top: auto;
 
-.clear {
-    bottom: 29.5vh;
-    right: 23px;
-    top: auto;
-}
+    }
+
+    .clear {
+        bottom: 29.5vh;
+        right: 23px;
+        top: auto;
+    }
 }
