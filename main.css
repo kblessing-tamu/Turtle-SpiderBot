@@ -362,7 +362,7 @@ body {
     .u {
         height: 31vh;
         position: absolute;
-        top: 32vh;
+        top: 32%;
         width: 36vw;
         left: 31vw;
     }
@@ -386,7 +386,7 @@ body {
     .d {
         height: 33vh;
         position: absolute;
-        top: 60vh;
+        top: 60%;
         width: 36vw;
         left: 31vw;
     }
@@ -409,7 +409,7 @@ body {
     .l {
         height: 64vh;
         position: absolute;
-        top: 32vh;
+        top: 32%;
         width: 32vw;
         left: -2vw;
 
@@ -434,7 +434,7 @@ body {
     .r {
         height: 64vh;
         position: absolute;
-        top: 32vh;
+        top: 32%;
         width: 32vw;
         right: 2vw;
     }
