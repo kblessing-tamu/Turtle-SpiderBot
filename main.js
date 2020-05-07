@@ -2,6 +2,7 @@ var percent, slider, output,clear,collapse;
 var max = 100;
 
 window.onload = function () {
+    var inc1 = document.getElementById("inc1");
     percent = document.getElementById("percentage");
     slider = document.getElementById("myRange");
     output = document.getElementById("output");
@@ -77,6 +78,31 @@ window.onload = function () {
 
         output.scrollTop = output.scrollHeight;
 
+    });
+
+
+    inc1.addEventListener('click', function(){
+       if(percent.value<100){
+        percent.value++;
+        slider.value = percent.value;
+       }
+    });
+
+    document.getElementById("dec1").addEventListener('click', function(){
+        if(percent.value>0){
+        percent.value--;
+        slider.value = percent.value;
+        }
+    });
+
+    document.getElementById("inc5").addEventListener('click', function(){
+        slider.value= parseInt(slider.value) + 5;
+        percent.value= slider.value;
+    });
+
+    document.getElementById("dec5").addEventListener('click', function(){
+        percent.value= percent.value - 5;
+        slider.value-=5;
     });
 
 }
