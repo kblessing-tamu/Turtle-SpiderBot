@@ -61,7 +61,7 @@ window.onload = function () {
         let collapse = document.getElementById('collapse');
         let style = window.getComputedStyle(clear),
             top = style.getPropertyValue('top');
-        console.log(top);
+       
 
         let win = document.getElementById("output");
         if (outOpen) {
@@ -119,7 +119,6 @@ window.onload = function () {
         let btns = document.getElementsByClassName('speed');
             
         for(let i = 2;i>=1;i--){
-            console.log(btns[i].innerText);
             btns[i].innerHTML = btns[i-1].innerHTML;
             //btns[i] = btns[i-1];
             //font-size: 18px;
@@ -127,7 +126,6 @@ window.onload = function () {
         }
         btns[0].style.fontSize = "18px";
         btns[0].style.fontWeight = "800";
-        console.log(btns[0]);
         btns[0].innerText = percent.value+'%';
     });
 
