@@ -315,6 +315,9 @@ body {
     visibility: hidden;
 }
 
+.stop{
+    visibility: hidden;
+}
 
 
 
@@ -405,7 +408,7 @@ body {
     .l {
         height: 64vh;
         position: relative;
-        top: -41vh;
+        top: -40vh;
         width: 32vw;
         left: -2vw;
 
@@ -426,6 +429,7 @@ body {
         margin: 50px;
     }
 
+
     .r {
         height: 64vh;
         position: relative;
@@ -434,23 +438,37 @@ body {
         right: -66vw;
     }
 
-    .collapse {
-        bottom: 29.2vh;
-        right: 84px;
-        top: auto;
+    .stop {
+        visibility: visible;
+        position: relative;
+        top: -179vh;
+        left: 32vw;
+        font-weight: 800;
+        font-size: 29px;
+        font-family: 'Roboto', sans-serif;
+        width: 86px;
+        padding: 32px;
+        z-index: 3;
     }
+}
 
-    .output {
-        bottom: 0px;
-        width: 100%;
-        right: 0px;
-        top:auto;
+.collapse {
+    bottom: 29.2vh;
+    right: 84px;
+    top: auto;
+}
 
-    }
+.output {
+    bottom: 0px;
+    width: 100%;
+    right: 0px;
+    top: auto;
 
-    .clear {
-        bottom: 29.5vh;
-        right: 23px;
-        top: auto;
-    }
+}
+
+.clear {
+    bottom: 29.5vh;
+    right: 23px;
+    top: auto;
+}
 }

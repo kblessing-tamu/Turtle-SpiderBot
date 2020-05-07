@@ -15,6 +15,7 @@ window.onload = function () {
     var downArrow = document.getElementById('d');
     var leftArrow = document.getElementById('l');
     var rightArrow = document.getElementById('r');
+    var stop = document.getElementById('stop');
     
     slider.oninput = function () {
         percent.value = slider.value;
@@ -154,6 +155,9 @@ window.onload = function () {
         output.innerHTML += "Right " + slider.value + "%<br>";
     });
 
+    stop.addEventListener('click',function(){
+        output.innerHTML += "stopping... <br>";
+    });
 }
 
 function isNumeric(n) {
