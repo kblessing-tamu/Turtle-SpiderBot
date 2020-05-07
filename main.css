@@ -1,3 +1,7 @@
+:root {
+    --back: #E0E0E0;
+}
+
 body {
     background-image: url('electronicdesign_16021_intel_drones_promo_1.png');
     background-repeat: no-repeat;
@@ -12,14 +16,16 @@ body {
     left: 172px;
 }
 
-.engine{
+
+.engine {
     width: 61px;
     height: auto;
     position: absolute;
     left: 7px;
     top: -3px;
 }
-.engineheader{
+
+.engineheader {
     position: absolute;
     top: 25px;
     left: 19px;
@@ -48,9 +54,9 @@ body {
     width: 73px;
     overflow: hidden;
     transition: all .5s;
-    background-color: #E0E0E0;
+    background-color: var(--back);
 
-  
+
 
 }
 
@@ -106,6 +112,8 @@ body {
     opacity: .5;
     overflow: auto;
     transition: all .5s;
+    top: 9px;
+    right: 9px;
 }
 
 .setSpeed {
@@ -187,6 +195,10 @@ body {
     text-align: end;
     left: 119px;
     top: 269px;
+    border-width: 0px;
+    border: none;
+    background-color: var(--back);
+    border-bottom: black solid 2px
 }
 
 .inc1 {
@@ -246,13 +258,14 @@ body {
     animation: bounceIn 1s 1s 1 normal forwards;
 }
 
-.outputtext{
+.outputtext {
     position: absolute;
     bottom: 4px;
     left: 5px;
     overflow: hidden;
 }
-.addInterval{
+
+.addInterval {
     position: relative;
     top: -827px;
     right: -207px;
@@ -261,26 +274,28 @@ body {
     border-style: outset;
 }
 
-.plus{
+.plus {
     position: relative;
     top: -16px;
     font-weight: 800;
     font-size: 61px;
-    
+
 }
-.interval{
+
+.interval {
     position: relative;
     top: -830px;
     right: -211px;
     width: 60px;
     height: 200px;
 }
-.intervalBtn{
+
+.intervalBtn {
     height: 31%;
     border-style: outset;
 }
 
-.speed{
+.speed {
     top: 26%;
     position: relative;
     font-size: 18px;
@@ -295,6 +310,14 @@ body {
         top: 43px;
     }
 }
+
+.arrow {
+    visibility: hidden;
+}
+
+
+
+
 
 @media only screen and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -317,6 +340,99 @@ body {
 
     }
 
+    .up {
+        visibility: visible;
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+        border: solid black;
+        border-width: 0 10px 10px 0;
+        display: inline-block;
+        padding: 21px;
+        background-color: white;
+        position: absolute;
+        left: 9%;
+        top: 19%;
+        margin: 50px;
+    }
+
+    .u {
+        height: 26vh;
+        position: relative;
+        top: -5vh;
+        width: 36vw;
+        left: 31vw;
+    }
+
+
+    .down {
+        visibility: visible;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        border: solid black;
+        border-width: 0 10px 10px 0;
+        display: inline-block;
+        padding: 21px;
+        background-color: white;
+        position: absolute;
+        left: 9%;
+        top: 19%;
+        margin: 50px;
+    }
+
+    .d {
+        height: 33vh;
+        position: relative;
+        top: -64vh;
+        width: 36vw;
+        left: 31vw;
+    }
+
+    .left {
+        visibility: visible;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        border: solid black;
+        border-width: 0 10px 10px 0;
+        display: inline-block;
+        padding: 21px;
+        background-color: white;
+        position: absolute;
+        left: 9%;
+        top: 29%;
+        margin: 50px;
+    }
+
+    .l {
+        height: 59vh;
+        position: relative;
+        top: -31vh;
+        width: 32vw;
+        left: -2vw;
+
+    }
+
+    .right {
+        visibility: visible;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        border: solid black;
+        border-width: 0 10px 10px 0;
+        display: inline-block;
+        padding: 21px;
+        background-color: white;
+        position: absolute;
+        left: 3%;
+        top: 29%;
+        margin: 50px;
+    }
+
+    .r {
+        height: 59vh;
+        position: relative;
+        top: -123vh;
+        width: 32vw;
+        right: -66vw;
+    }
 
     .collapse {
         bottom: 29.2vh;
@@ -328,6 +444,8 @@ body {
         bottom: 0px;
         width: 100%;
         right: 0px;
+        top:auto;
+        
     }
 
     .clear {

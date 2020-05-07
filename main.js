@@ -11,7 +11,11 @@ window.onload = function () {
     percent.value = slider.value;
     var hint = this.document.getElementById("hint");
     var addInterval = document.getElementById("addInterval");
-
+    var upArrow = document.getElementById('u');
+    var downArrow = document.getElementById('d');
+    var leftArrow = document.getElementById('l');
+    var rightArrow = document.getElementById('r');
+    
     slider.oninput = function () {
         percent.value = slider.value;
     }
@@ -134,6 +138,21 @@ window.onload = function () {
             percent.value = slider.value;
         });
     }
+    upArrow.addEventListener('click',function(){
+        output.innerHTML += "Forward " + slider.value + "%<br>";
+    });
+
+    downArrow.addEventListener('click',function(){
+        output.innerHTML += "Backward " + slider.value + "%<br>";
+    });
+
+    leftArrow.addEventListener('click',function(){
+        output.innerHTML += "Left " + slider.value + "%<br>";
+    });
+
+    rightArrow.addEventListener('click',function(){
+        output.innerHTML += "Right " + slider.value + "%<br>";
+    });
 
 }
 
