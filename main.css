@@ -246,6 +246,12 @@ body {
     animation: bounceIn 1s 1s 1 normal forwards;
 }
 
+.outputtext{
+    position: absolute;
+    bottom: 4px;
+    left: 5px;
+}
+
 @keyframes bounceIn {
 
     100% {

@@ -5,7 +5,7 @@ window.onload = function () {
     var inc1 = document.getElementById("inc1");
     percent = document.getElementById("percentage");
     slider = document.getElementById("myRange");
-    output = document.getElementById("output");
+    output = document.getElementById("outputtext");
     clear = document.getElementById("clear");
     collapse = document.getElementById('collapse');
     percent.value = slider.value;
@@ -55,11 +55,12 @@ window.onload = function () {
         let collapse = document.getElementById('collapse');
         let style = window.getComputedStyle(clear),
             top = style.getPropertyValue('top');
-        
+            console.log(top);
             
-
+        let win = document.getElementById("output");
         if(outOpen){
-            output.style.height = "7vh";
+            win.style.height = "7vh";
+            
             if(top != "17px"){
                 collapse.style.bottom = "1.2vh"
                 clear.style.bottom = "1.5vh";
@@ -68,7 +69,7 @@ window.onload = function () {
             hint.innerHTML = "Open Prompt";
             outOpen = !outOpen;
         }else{
-            output.style.height = "35vh";
+            win.style.height = "35vh";
             if(top != "17px"){
                 collapse.style.bottom = "29.2vh"
                 clear.style.bottom = "29.5vh";
@@ -78,7 +79,7 @@ window.onload = function () {
             outOpen = !outOpen;
         }
 
-        output.scrollTop = output.scrollHeight;
+        win.scrollTop = win.scrollHeight;
 
     });
 
