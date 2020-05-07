@@ -350,15 +350,15 @@ body {
         padding: 21px;
         background-color: white;
         position: absolute;
-        left: 9%;
+        left: 1%;
         top: 19%;
         margin: 50px;
     }
 
     .u {
-        height: 26vh;
+        height: 31vh;
         position: relative;
-        top: -5vh;
+        top: -10vh;
         width: 36vw;
         left: 31vw;
     }
@@ -374,7 +374,7 @@ body {
         padding: 21px;
         background-color: white;
         position: absolute;
-        left: 9%;
+        left: 1%;
         top: 19%;
         margin: 50px;
     }
@@ -382,7 +382,7 @@ body {
     .d {
         height: 33vh;
         position: relative;
-        top: -64vh;
+        top: -74vh;
         width: 36vw;
         left: 31vw;
     }
@@ -397,15 +397,15 @@ body {
         padding: 21px;
         background-color: white;
         position: absolute;
-        left: 9%;
+        left: -3%;
         top: 29%;
         margin: 50px;
     }
 
     .l {
-        height: 59vh;
+        height: 64vh;
         position: relative;
-        top: -31vh;
+        top: -41vh;
         width: 32vw;
         left: -2vw;
 
@@ -421,15 +421,15 @@ body {
         padding: 21px;
         background-color: white;
         position: absolute;
-        left: 3%;
+        left: -7%;
         top: 29%;
         margin: 50px;
     }
 
     .r {
-        height: 59vh;
+        height: 64vh;
         position: relative;
-        top: -123vh;
+        top: -137vh;
         width: 32vw;
         right: -66vw;
     }
@@ -445,7 +445,7 @@ body {
         width: 100%;
         right: 0px;
         top:auto;
-        
+
     }
 
     .clear {
