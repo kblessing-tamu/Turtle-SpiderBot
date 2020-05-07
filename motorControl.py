@@ -2,8 +2,8 @@ import RPi.GPIO as GPIO
 import sys       
 from time import sleep
 def main(argv):
-    mode = sys.argv[1]
-    speed = sys.argv[2]
+    mode = "f"
+    speed = 50
     
     
     

@@ -181,7 +181,7 @@ function isNumeric(n) {
 }
 
 function goPython(mode , speed){
-   let u = "motorControl.py " +mode + " " +speed;
+   let u = "motorControl.py";
     $.ajax({
       url: u,
      context: document.body
