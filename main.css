@@ -262,6 +262,13 @@ body {
         visibility: hidden !important;
     }
 
+    @keyframes bounceIn {
+
+        100% {
+            visibility: hidden;
+        }
+    }
+
     .slider::-webkit-slider-thumb {
 
         width: 50px;
