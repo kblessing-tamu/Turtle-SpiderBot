@@ -16,7 +16,7 @@ window.onload = function () {
     var leftArrow = document.getElementById('l');
     var rightArrow = document.getElementById('r');
     var stop = document.getElementById('stop');
-    
+
     slider.oninput = function () {
         percent.value = slider.value;
     }
@@ -57,11 +57,16 @@ window.onload = function () {
     });
 
     var outOpen = true;
+
+    let style = window.getComputedStyle(clear),
+        top = style.getPropertyValue('top');
+    if (top != "17px") {
+        outOpen = !outOpen;
+    }
     collapse.addEventListener('click', function () {
         let collapse = document.getElementById('collapse');
-        let style = window.getComputedStyle(clear),
-            top = style.getPropertyValue('top');
-       
+
+
 
         let win = document.getElementById("output");
         if (outOpen) {
@@ -70,18 +75,25 @@ window.onload = function () {
             if (top != "17px") {
                 collapse.style.bottom = "1.2vh"
                 clear.style.bottom = "1.5vh";
+                hint.innerHTML = "";
+                collapse.style.transform = "rotate(180deg)";
+            } else {
+                collapse.style.transform = "rotate(0deg)";
+                hint.innerHTML = "Open Prompt";
             }
-            collapse.style.transform = "rotate(0deg)";
-            hint.innerHTML = "Open Prompt";
+
             outOpen = !outOpen;
         } else {
             win.style.height = "35vh";
             if (top != "17px") {
                 collapse.style.bottom = "29.2vh"
                 clear.style.bottom = "29.5vh";
+                hint.innerHTML = "";
+                collapse.style.transform = "rotate(0deg)";
+            } else {
+                hint.innerHTML = "Close Prompt";
+                collapse.style.transform = "rotate(180deg)";
             }
-            hint.innerHTML = "Close Prompt";
-            collapse.style.transform = "rotate(180deg)";
             outOpen = !outOpen;
         }
 
@@ -117,16 +129,16 @@ window.onload = function () {
 
     addInterval.addEventListener('click', function () {
         let btns = document.getElementsByClassName('speed');
-            
-        for(let i = 2;i>=1;i--){
-            btns[i].innerHTML = btns[i-1].innerHTML;
+
+        for (let i = 2; i >= 1; i--) {
+            btns[i].innerHTML = btns[i - 1].innerHTML;
             //btns[i] = btns[i-1];
             //font-size: 18px;
             //font-weight: 800;
         }
         btns[0].style.fontSize = "18px";
         btns[0].style.fontWeight = "800";
-        btns[0].innerText = percent.value+'%';
+        btns[0].innerText = percent.value + '%';
     });
 
     for (var i = 1; i <= 3; i++) {
@@ -137,23 +149,23 @@ window.onload = function () {
             percent.value = slider.value;
         });
     }
-    upArrow.addEventListener('click',function(){
+    upArrow.addEventListener('click', function () {
         output.innerHTML += "Forward " + slider.value + "%<br>";
     });
 
-    downArrow.addEventListener('click',function(){
+    downArrow.addEventListener('click', function () {
         output.innerHTML += "Backward " + slider.value + "%<br>";
     });
 
-    leftArrow.addEventListener('click',function(){
+    leftArrow.addEventListener('click', function () {
         output.innerHTML += "Left " + slider.value + "%<br>";
     });
 
-    rightArrow.addEventListener('click',function(){
+    rightArrow.addEventListener('click', function () {
         output.innerHTML += "Right " + slider.value + "%<br>";
     });
 
-    stop.addEventListener('click',function(){
+    stop.addEventListener('click', function () {
         output.innerHTML += "stopping... <br>";
     });
 }

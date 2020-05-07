@@ -454,11 +454,12 @@ body {
 
 
     .collapse {
-        bottom: 29.2vh;
+        bottom: 1.2vh;
         right: 84px;
         top: auto;
         z-index: 5;
     }
+
 
     .output {
         bottom: 0px;
@@ -466,11 +467,12 @@ body {
         right: 0px;
         top: auto;
         z-index: 5;
+        height: 7vh;
 
     }
 
     .clear {
-        bottom: 29.5vh;
+        bottom: 1.5vh;
         right: 23px;
         top: auto;
         z-index: 5;
