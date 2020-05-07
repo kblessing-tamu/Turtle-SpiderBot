@@ -360,11 +360,11 @@ body {
     }
 
     .u {
-        height: 31vh;
+        height: 31%;
         position: absolute;
         top: 32%;
-        width: 36vw;
-        left: 31vw;
+        width: 36%;
+        left: 31%;
     }
 
 
@@ -384,11 +384,11 @@ body {
     }
 
     .d {
-        height: 33vh;
+        height: 33%;
         position: absolute;
         top: 60%;
-        width: 36vw;
-        left: 31vw;
+        width: 36%;
+        left: 31%;
     }
 
     .left {
@@ -407,11 +407,11 @@ body {
     }
 
     .l {
-        height: 64vh;
+        height: 64%;
         position: absolute;
         top: 32%;
-        width: 32vw;
-        left: -2vw;
+        width: 32%;
+        left: -2%;
 
     }
 
@@ -432,23 +432,23 @@ body {
 
 
     .r {
-        height: 64vh;
+        height: 64%;
         position: absolute;
         top: 32%;
-        width: 32vw;
-        right: 2vw;
+        width: 32%;
+        right: 2%;
     }
 
     .stop {
         visibility: visible;
         position: absolute;
-        top: 55vh;
-        left: 32.5vw;
+        top: 55%;
+        left: 32.5%;
         font-weight: 800;
         font-size: 29px;
         font-family: 'Roboto', sans-serif;
         width: 86px;
-        padding: 32px;
+        padding: 8%;
         z-index: 3;
     }
 
