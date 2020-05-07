@@ -151,25 +151,41 @@ window.onload = function () {
     }
     upArrow.addEventListener('click', function () {
         output.innerHTML += "Forward " + slider.value + "%<br>";
+        goPython("r",slider.value);
     });
 
     downArrow.addEventListener('click', function () {
         output.innerHTML += "Backward " + slider.value + "%<br>";
+        goPython("b",slider.value);
+        
     });
 
     leftArrow.addEventListener('click', function () {
         output.innerHTML += "Left " + slider.value + "%<br>";
+        goPython("l",slider.value);
     });
 
     rightArrow.addEventListener('click', function () {
         output.innerHTML += "Right " + slider.value + "%<br>";
+        goPython("r",slider.value);
     });
 
     stop.addEventListener('click', function () {
         output.innerHTML += "stopping... <br>";
+        goPython("e","0");
     });
 }
 
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+function goPython(mode , speed){
+   let u = "motorControl.py " +mode + " " +speed;
+    $.ajax({
+      url: u,
+     context: document.body
+    }).done(function() {
+     alert('finished python script');;
+    });
 }
