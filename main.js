@@ -151,29 +151,52 @@ window.onload = function () {
     }
     upArrow.addEventListener('click', function () {
         output.innerHTML += "Forward " + slider.value + "%<br>";
-        goPython("r",slider.value);
+       // goPython("r",slider.value);
     });
 
     downArrow.addEventListener('click', function () {
         output.innerHTML += "Backward " + slider.value + "%<br>";
-        goPython("b",slider.value);
+        //goPython("b",slider.value);
         
     });
 
     leftArrow.addEventListener('click', function () {
         output.innerHTML += "Left " + slider.value + "%<br>";
-        goPython("l",slider.value);
+        //goPython("l",slider.value);
     });
 
     rightArrow.addEventListener('click', function () {
         output.innerHTML += "Right " + slider.value + "%<br>";
-        goPython("r",slider.value);
+        //goPython("r",slider.value);
     });
 
     stop.addEventListener('click', function () {
         output.innerHTML += "stopping... <br>";
-        goPython("e","0");
+        //goPython("e","0");
     });
+
+    let btn = document.getElementById('button');
+    document.getElementById("open").addEventListener('click',function(){
+        
+    if(open){
+        btn.style.width = "73px";
+        btn.style.height = "58px";
+
+        open = !open;
+    }else{
+        btn.style.width = "290px";
+        btn.style.height = "377px";
+
+        open = !open;
+    }
+    });
+
+    btn.addEventListener('focusout',function(){
+        btn.style.width = "73px";
+        btn.style.height = "58px";
+    });
+    
+
 }
 
 function isNumeric(n) {
@@ -189,3 +212,5 @@ function goPython(mode , speed){
      alert('finished python script');;
     });
 }
+
+    

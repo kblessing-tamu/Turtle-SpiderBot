@@ -26,13 +26,16 @@ body {
     top: -3px;
 }
 
+
 .engineheader {
     position: absolute;
     top: 25px;
     left: 19px;
     font-weight: 800;
     font-size: 11px;
+
 }
+
 
 .button {
     display: inline-block;
@@ -68,6 +71,20 @@ body {
     height: 377px;
 
 }
+
+.open{
+    position: absolute;
+    height: 58px;
+    width: 73px;
+    z-index: 10;
+}
+
+.open:hover+.button{
+    pointer-events: all;
+    width: 290px;
+    height: 377px;
+}
+
 
 
 
