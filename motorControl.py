@@ -2,22 +2,11 @@ import RPi.GPIO as GPIO
 import sys       
 from time import sleep
 def main(argv):
-    try:
-        opts, args = getopt.getopt(argv,"hi:o:",["mode=","time="])
-    except getopt.GetoptError:
-        sys.exit(2)
-
-    for opt, arg in opts:
-      if opt == '-h':
-        print 'test.py -m <mode> -t <outputfile>'
-        sys.exit()
-      elif opt in ("-m", "--mode"):
-        mode = arg
-      elif opt in ("-t", "--time"):
-        time = arg
+    mode = sys.argv[1]
+    speed = sys.argv[2]
     
-    print 'mode file is "', mode
-    print 'time file is "', time
+    
+    
     in1 = 24
     in2 = 23
     en = 25
@@ -55,27 +44,14 @@ def main(argv):
 
     while(1):
 
-        x=raw_input()
+        x=mode
         
-        if x=='r':
-            print("run")
-            if(temp1==1):
-            GPIO.output(in1,GPIO.HIGH)
-            GPIO.output(in2,GPIO.LOW)
-            GPIO.output(in3,GPIO.HIGH)
-            GPIO.output(in4,GPIO.LOW)
-            print("forward")
-            x='z'
-            else:
-            GPIO.output(in1,GPIO.LOW)
-            GPIO.output(in2,GPIO.HIGH)
-            GPIO.output(in3,GPIO.LOW)
-            GPIO.output(in4,GPIO.HIGH)
-            print("backward")
-            x='z'
+        p.ChangeDutyCycle(float(speed))
+        p1.ChangeDutyCycle(float(speed))
+    
 
 
-        elif x=='s':
+        if x=='s':
             print("stop")
             GPIO.output(in1,GPIO.LOW)
             GPIO.output(in2,GPIO.LOW)
@@ -101,23 +77,25 @@ def main(argv):
             temp1=0
             x='z'
 
-        elif x=='l':
+        elif x=='s':
             print("low")
-            p.ChangeDutyCycle(25)
-            p1.ChangeDutyCycle(25)
-            x='z'
-
-        elif x=='m':
-            print("medium")
-            p.ChangeDutyCycle(50)
-            p1.ChangeDutyCycle(50)
-            x='z'
-
-        elif x=='h':
-            print("high")
-            p.ChangeDutyCycle(100)
-            p1.ChangeDutyCycle(100)
-            x='z'
+            p.ChangeDutyCycle(speed)
+            p1.ChangeDutyCycle(speed)
+            
+        elif x=='r':
+            print("right")
+            GPIO.output(in1,GPIO.HIGH)
+            GPIO.output(in2,GPIO.LOW)
+            GPIO.output(in3,GPIO.LOW)
+            GPIO.output(in4,GPIO.LOW)
+            x = 'z'
+        elif x=='l':
+            print("right")
+            GPIO.output(in1,GPIO.LOW)
+            GPIO.output(in2,GPIO.LOW)
+            GPIO.output(in3,GPIO.HIGH)
+            GPIO.output(in4,GPIO.LOW)
+            x = 'z'
         
         
         elif x=='e':
@@ -128,3 +106,7 @@ def main(argv):
         else:
             print("<<<  wrong data  >>>")
             print("please enter the defined data to continue.....")
+            
+            
+if __name__ == "__main__":
+   main(sys.argv[1:])
