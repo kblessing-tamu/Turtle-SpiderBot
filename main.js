@@ -101,8 +101,8 @@ window.onload = function () {
     });
 
     document.getElementById("dec5").addEventListener('click', function(){
-        percent.value= percent.value - 5;
-        slider.value-=5;
+        slider.value= parseInt(slider.value) - 5;
+        percent.value= slider.value;
     });
 
 }
