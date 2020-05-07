@@ -4,6 +4,11 @@ from time import sleep
 in1 = 24
 in2 = 23
 en = 25
+
+en2 = 17
+in3 = 22
+in4 27
+
 temp1=1
 
 GPIO.setmode(GPIO.BCM)
@@ -12,6 +17,14 @@ GPIO.setup(in2,GPIO.OUT)
 GPIO.setup(en,GPIO.OUT)
 GPIO.output(in1,GPIO.LOW)
 GPIO.output(in2,GPIO.LOW)
+p=GPIO.PWM(en,1000)
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(in13,GPIO.OUT)
+GPIO.setup(in4,GPIO.OUT)
+GPIO.setup(en2,GPIO.OUT)
+GPIO.output(in3,GPIO.LOW)
+GPIO.output(in4,GPIO.LOW)
 p=GPIO.PWM(en,1000)
 
 p.start(25)
@@ -29,11 +42,15 @@ while(1):
         if(temp1==1):
          GPIO.output(in1,GPIO.HIGH)
          GPIO.output(in2,GPIO.LOW)
+         GPIO.output(in3,GPIO.HIGH)
+         GPIO.output(in4,GPIO.LOW)
          print("forward")
          x='z'
         else:
          GPIO.output(in1,GPIO.LOW)
          GPIO.output(in2,GPIO.HIGH)
+         GPIO.output(in3,GPIO.HIGH)
+         GPIO.output(in4,GPIO.LOW)
          print("backward")
          x='z'
 
@@ -42,12 +59,16 @@ while(1):
         print("stop")
         GPIO.output(in1,GPIO.LOW)
         GPIO.output(in2,GPIO.LOW)
+        GPIO.output(in3,GPIO.HIGH)
+        GPIO.output(in4,GPIO.LOW)
         x='z'
 
     elif x=='f':
         print("forward")
         GPIO.output(in1,GPIO.HIGH)
         GPIO.output(in2,GPIO.LOW)
+        GPIO.output(in3,GPIO.HIGH)
+        GPIO.output(in4,GPIO.LOW)
         temp1=1
         x='z'
 
@@ -55,6 +76,8 @@ while(1):
         print("backward")
         GPIO.output(in1,GPIO.LOW)
         GPIO.output(in2,GPIO.HIGH)
+        GPIO.output(in3,GPIO.HIGH)
+        GPIO.output(in4,GPIO.LOW)
         temp1=0
         x='z'
 
@@ -70,7 +93,7 @@ while(1):
 
     elif x=='h':
         print("high")
-        p.ChangeDutyCycle(75)
+        p.ChangeDutyCycle(100)
         x='z'
      
     
