@@ -361,8 +361,8 @@ body {
 
     .u {
         height: 31vh;
-        position: relative;
-        top: -15vh;
+        position: absolute;
+        top: 32vh;
         width: 36vw;
         left: 31vw;
     }
@@ -385,8 +385,8 @@ body {
 
     .d {
         height: 33vh;
-        position: relative;
-        top: -79vh;
+        position: absolute;
+        top: 60vh;
         width: 36vw;
         left: 31vw;
     }
@@ -408,8 +408,8 @@ body {
 
     .l {
         height: 64vh;
-        position: relative;
-        top: -45vh;
+        position: absolute;
+        top: 32vh;
         width: 32vw;
         left: -2vw;
 
@@ -434,16 +434,16 @@ body {
     .r {
         height: 64vh;
         position: relative;
-        top: -142vh;
+        top: -15vh;
         width: 32vw;
         right: -66vw;
     }
 
     .stop {
         visibility: visible;
-        position: relative;
-        top: -184vh;
-        left: 32vw;
+        position: absolute;
+        top: 55vh;
+        left: 32.5vw;
         font-weight: 800;
         font-size: 29px;
         font-family: 'Roboto', sans-serif;
