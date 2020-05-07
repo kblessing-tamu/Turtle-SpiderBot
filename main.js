@@ -9,7 +9,7 @@ window.onload = function () {
     clear = document.getElementById("clear");
     collapse = document.getElementById('collapse');
     percent.value = slider.value;
-
+    var hint = this.document.getElementById("hint");
 
     slider.oninput = function () {
         percent.value = slider.value;
@@ -64,7 +64,8 @@ window.onload = function () {
                 collapse.style.bottom = "1.2vh"
                 clear.style.bottom = "1.5vh";
             }
-            collapse.style.transform = "rotate(180deg)";
+            collapse.style.transform = "rotate(0deg)";
+            hint.innerHTML = "Open Prompt";
             outOpen = !outOpen;
         }else{
             output.style.height = "35vh";
@@ -72,13 +73,15 @@ window.onload = function () {
                 collapse.style.bottom = "29.2vh"
                 clear.style.bottom = "29.5vh";
             }
-            collapse.style.transform = "rotate(0deg)";
+            hint.innerHTML = "Close Prompt";
+            collapse.style.transform = "rotate(180deg)";
             outOpen = !outOpen;
         }
 
         output.scrollTop = output.scrollHeight;
 
     });
+
 
 
     inc1.addEventListener('click', function(){

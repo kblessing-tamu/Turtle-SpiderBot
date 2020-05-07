@@ -13,9 +13,8 @@
 
 <body>
     <button class="button">
-        <div class="menu"></div>
-        <div class="menu"></div>
-        <div class="menu"></div>
+        <img class="engine" src="engine.png">
+        <div class="engineheader">CHECK</div>
         <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
         <input type="text" id="percentage" maxlength="3" size="3" value="0">
         <p id="p">%</p>
@@ -29,7 +28,11 @@
 
     <span class ="output" id="output"></span>
     <div class="clear" id="clear">Clear</div>
-    <div class="collapse" id="collapse"><i class="fa fa-angle-down" style="font-size:36px"></i></div>
+    <div class="collapse" id="collapse">
+        
+        <i class="fa fa-angle-down" style="font-size:36px"></i>
+    </div>
+    <div class="hint" id = "hint">Close Prompt</div>
 
 </body>
 
