@@ -191,10 +191,6 @@ window.onload = function () {
     }
     });
 
-    btn.addEventListener('focusout',function(){
-        btn.style.width = "73px";
-        btn.style.height = "58px";
-    });
     
 
 }
