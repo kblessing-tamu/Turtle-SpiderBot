@@ -449,7 +449,7 @@ a:-webkit-any-link{
     position: absolute;
     width: 100vw;
     height: 100vh;
-    top: -66vh;
+    top: 0vh;
     left: -9px;
     overflow: hidden;
     padding: 0;
@@ -626,6 +626,7 @@ a:-webkit-any-link{
 
     .driveBtn{
         visibility: hidden;
+        position: absolute;
     }
 
     .arrowPC{
