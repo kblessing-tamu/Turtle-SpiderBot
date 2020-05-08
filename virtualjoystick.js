@@ -318,8 +318,8 @@ VirtualJoystick.prototype._onTouchMove	= function(event)
 VirtualJoystick.prototype._buildJoystickBase	= function()
 {
 	var canvas	= document.createElement( 'canvas' );
-	canvas.width	= 126;
-	canvas.height	= 126;
+	canvas.width	= 352;
+	canvas.height	= 327;
 	
 	var ctx		= canvas.getContext('2d');
 	ctx.beginPath(); 
@@ -343,8 +343,8 @@ VirtualJoystick.prototype._buildJoystickBase	= function()
 VirtualJoystick.prototype._buildJoystickStick	= function()
 {
 	var canvas	= document.createElement( 'canvas' );
-	canvas.width	= 449;
-	canvas.height	= 391.7;
+	canvas.width	= 352;
+	canvas.height	= 327;
 	var ctx		= canvas.getContext('2d');
 	ctx.beginPath(); 
 	ctx.strokeStyle	= this._strokeStyle; 

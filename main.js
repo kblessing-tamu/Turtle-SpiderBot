@@ -155,9 +155,6 @@ window.onload = function () {
 
         for (let i = 2; i >= 1; i--) {
             btns[i].innerHTML = btns[i - 1].innerHTML;
-            //btns[i] = btns[i-1];
-            //font-size: 18px;
-            //font-weight: 800;
         }
         btns[0].style.fontSize = "18px";
         btns[0].style.fontWeight = "800";
@@ -271,10 +268,7 @@ window.onload = function () {
         if (!open) {
             btn.style.width = "290px";
             btn.style.height = "360px";
-        } else {
-
         }
-
     });
 
 
@@ -320,10 +314,10 @@ window.onload = function () {
         mouseSupport: true,
     });
     joystick.addEventListener('touchStart', function () {
-        console.log('down')
+        //console.log('down')
     });
     joystick.addEventListener('touchEnd', function () {
-        console.log('up')
+        //console.log('up')
     });
     if (!pc) {
         setInterval(function () {

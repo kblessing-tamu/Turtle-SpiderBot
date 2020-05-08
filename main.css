@@ -19,11 +19,11 @@ body {
 }
 .openspeed {
     width: 61px;
-    height: auto;
+    height: 50px;
     position: absolute;
-    left: 9px;
-    top: -3px;
-    font-size: 54px;
+    left: 8px;
+    top: -1px;
+    font-size: 46px;
     color: var(--front);
 }
 .button {
@@ -97,8 +97,10 @@ a:-webkit-any-link{
 
 .open{
     position: absolute;
-    height: 58px;
-    width: 73px;
+    height: 49px;
+    top: 14px;
+    left: 12px;
+    width: 68px;
     z-index: 10;
 }
 .open:hover+.button{
@@ -332,6 +334,7 @@ a:-webkit-any-link{
 
 .arrow {
     visibility: hidden;
+    pointer-events: none;
 }
 
 .arrowPC{
@@ -445,7 +448,7 @@ a:-webkit-any-link{
 #container {
     position: absolute;
     width: 100%;
-    top: -20vh;
+    top: -30vh;
     height: 57vh;
     overflow: hidden;
     padding: 0;
@@ -459,6 +462,9 @@ a:-webkit-any-link{
 
 @media only screen and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
 
+    .arrow{
+        pointer-events: auto;
+    }
     #container{
         visibility: visible;
         position: absolute;
