@@ -447,9 +447,10 @@ a:-webkit-any-link{
 }
 #container {
     position: absolute;
-    width: 100%;
-    top: -30vh;
-    height: 57vh;
+    width: 100vw;
+    height: 100vh;
+    top: -66vh;
+    left: -9px;
     overflow: hidden;
     padding: 0;
     margin: 0;
