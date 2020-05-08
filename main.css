@@ -9,6 +9,7 @@ body {
     background-size: 100%;
     object-fit: cover;
     overflow: hidden;
+    transition: all .5s;
 }
 #p {
     margin-block-start: -2em;
@@ -51,11 +52,49 @@ body {
 
 
 }
+a:-webkit-any-link{
+    color: #4d4dff;
+}
 .button:hover {
     width: 290px;
     height: 377px;
 
 }
+
+.driveBtn{
+    height: 58px;
+    width: 73px;
+    top: -251px;
+    position: relative;
+    background-color: var(--back);
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+    transition: all .5s;
+    overflow: hidden;
+    z-index: 9;
+}
+
+.drive{
+    
+    background-image: url(steeringWheel.png);
+    background-repeat: no-repeat;
+    background-size: 45px auto;
+    background-position-x: center;
+    background-position-y: center;
+    position: relative;
+    height: 58px;
+    width: 73px;
+    
+    
+}
+
+
+.driveBtn:hover{
+
+    width: 290px;
+    height: 360px;
+
+}
+
 .open{
     position: absolute;
     height: 58px;
@@ -66,6 +105,10 @@ body {
     pointer-events: all;
     width: 290px;
     height: 377px;
+}
+
+.button:hover+.driveBtn{
+    top: 2px;
 }
 .slider {
     position: relative;
@@ -291,8 +334,98 @@ body {
     visibility: hidden;
 }
 
+.arrowPC{
+    visibility: visible;
+}
+
 .stop {
     visibility: hidden;
+    position: absolute;
+}
+
+.u {
+    position: absolute;
+    top: 0px;
+    left: 89px;
+    width: 35%;
+    height: 50%;
+}
+
+.up {
+    -webkit-transform: rotate(-135deg);
+    border: solid black;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 21px;
+    position: absolute;
+    left: -16%;
+    top: 16%;
+    margin: 50px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border: solid black;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 21px;
+    position: absolute;
+    left: -29.5%;
+    top: 2%;
+    margin: 50px;
+
+}
+
+.d {
+    height: 52%;
+    position: absolute;
+    top: 48%;
+    width: 33%;
+    left: 100px;
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    border: solid black;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 21px;
+    position: absolute;
+    left: -3%;
+    top: 13%;
+    margin: 50px;
+}
+
+.l {
+    height: 82%;
+    position: absolute;
+    top: 18%;
+    width: 32%;
+    left: -2%;
+}
+
+.right {
+
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    border: solid black;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 21px;
+    position: absolute;
+    left: -45%;
+    top: 29%;
+    margin: 50px;
+}
+
+.r {
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    width: 34%;
+    right: 0%;
 }
 
 
@@ -451,5 +584,13 @@ body {
         right: 23px;
         top: auto;
         z-index: 5;
+    }
+
+    .driveBtn{
+        visibility: hidden;
+    }
+
+    .arrowPC{
+        visibility: hidden;
     }
 }

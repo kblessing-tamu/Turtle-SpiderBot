@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="open" id="open">
-        <div class="openspeed" id ="openspeed"><i class="fa fa-tachometer"></i></i></div>
+        <div class="openspeed" id="openspeed"><i class="fa fa-tachometer"></i></i></div>
     </div>
-    <button class="button" id ="button">
+    <button class="button" id="button">
 
         <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
         <input type="text" pattern="[0-9]" id="percentage" maxlength="3" size="3" value="0">
@@ -27,34 +28,67 @@
         <div class="inc5" id="inc5">+5</div>
         <div class="dec1" id="dec1">-1</div>
         <div class="dec5" id="dec5">-5</div>
-        <div class="addInterval" id="addInterval"><div class="plus">+</div></div>
+        <div class="addInterval" id="addInterval">
+            <div class="plus">+</div>
+        </div>
         <div class="interval" id="interval">
-            <div class="intervalBtn" id="intervalBtn1"><div class="speed" id="speed">100%</div></div>
-            <div class="intervalBtn" id="intervalBtn2"><div class="speed" id="speed">50%</div></div>
-            <div class="intervalBtn" id="intervalBtn3"><div class="speed" id="speed">0%</div></div>
+            <div class="intervalBtn" id="intervalBtn1">
+                <div class="speed" id="speed">100%</div>
+            </div>
+            <div class="intervalBtn" id="intervalBtn2">
+                <div class="speed" id="speed">50%</div>
+            </div>
+            <div class="intervalBtn" id="intervalBtn3">
+                <div class="speed" id="speed">0%</div>
+            </div>
 
         </div>
 
     </button>
 
-    <div class="drive" id="drive">
-
+    <div class="driveBtn" id="driveBtn">
+        <div class="drive" id="drive"></div>
+        <div class="u" id="upc">
+            <div class="arrowPC up" id="upArrowPC"></div>
+        </div>
+        <div class="l" id="lpc">
+            <div class="arrowPC left" id="leftArrowPC"></div>
+        </div>
+        <div class="d" id="dpc">
+            <div class="arrowPC down" id="downArrowPC"></div>
+        </div>
+        <div class="r" id="rpc">
+            <div class="arrowPC right" id="rightArrowPC"></div>
+        </div>
     </div>
 
-    <div class="u" id="u"><div class="arrow up" id="upArrow"></div> </div>
-    <div class="l" id="l"><div class="arrow left" id="downArrow"></div> </div>
-    <div class="d" id="d"><div class="arrow down" id="downArrow"></div> </div>
-    <div class="r" id="r"><div class="arrow right" id="downArrow"></div> </div>
+    <div class="u" id="u">
+        <div class="arrow up" id="upArrow"></div>
+    </div>
+    <div class="l" id="l">
+        <div class="arrow left" id="leftArrow"></div>
+    </div>
+    <div class="d" id="d">
+        <div class="arrow down" id="downArrow"></div>
+    </div>
+    <div class="r" id="r">
+        <div class="arrow right" id="rightArrow"></div>
+    </div>
     <div class="stop" id="stop">STOP</div>
 
-    <span class ="output" id="output">
-        <div class="outputtext" id="outputtext"></div>
+    <span class="output" id="output">
+        <div class="outputtext" id="outputtext">
+            Loading...<br>
+            Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik" target="_blank">Freepik</a>
+            from <a href="https://www.flaticon.com/" title="Flaticon" target="_blank"> www.flaticon.com</a><br>
+
+        </div>
     </span>
     <div class="clear" id="clear">Clear</div>
     <div class="collapse" id="collapse">
         <i class="fa fa-angle-down" style="font-size:36px"></i>
     </div>
-    <div class="hint" id = "hint">Close Prompt</div>
+    <div class="hint" id="hint">Close Prompt</div>
 
 </body>
 

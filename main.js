@@ -16,10 +16,27 @@ window.onload = function () {
     var leftArrow = document.getElementById('l');
     var rightArrow = document.getElementById('r');
     var stop = document.getElementById('stop');
+    var driveBtn = document.getElementById('drive');
 
     slider.oninput = function () {
         percent.value = slider.value;
     }
+
+    document.getElementById('upc').addEventListener('click', function () {
+        output.innerHTML += "Forward " + slider.value + "%<br>";
+    });
+
+    document.getElementById('dpc').addEventListener('click', function () {
+        output.innerHTML += "Backward " + slider.value + "%<br>";
+    });
+
+    document.getElementById('lpc').addEventListener('click', function () {
+        output.innerHTML += "Turning Left " + slider.value + "%<br>";
+    });
+
+    document.getElementById('rpc').addEventListener('click', function () {
+        output.innerHTML += "Turning Right " + slider.value + "%<br>";
+    });
 
     document.getElementById("setSpeed").addEventListener("click", function () {
         slider.value = percent.value;
@@ -35,7 +52,8 @@ window.onload = function () {
     });
 
     clear.addEventListener("click", function () {
-        output.innerHTML = "";
+        output.innerHTML = "Cleaning...<br>"
+        output.innerHTML += "Icons made by <a href=\"https://www.flaticon.com/authors/freepik\" title=\"Freepik\" target=\"_blank\">Freepik</a> from <a href=\"https://www.flaticon.com\" title=\"Flaticon\" target=\"_blank\"> www.flaticon.com</a><br>";
     });
 
     percent.addEventListener('input', function () {
@@ -151,13 +169,13 @@ window.onload = function () {
     }
     upArrow.addEventListener('click', function () {
         output.innerHTML += "Forward " + slider.value + "%<br>";
-       // goPython("r",slider.value);
+        // goPython("r",slider.value);
     });
 
     downArrow.addEventListener('click', function () {
         output.innerHTML += "Backward " + slider.value + "%<br>";
         //goPython("b",slider.value);
-        
+
     });
 
     leftArrow.addEventListener('click', function () {
@@ -179,22 +197,117 @@ window.onload = function () {
     let open = false;
 
 
-    document.getElementById("open").addEventListener('click',function(){
-        
-    if(open){
-        btn.style.width = "73px";
-        btn.style.height = "58px";
+    document.getElementById("open").addEventListener('click', function () {
+
+        if (open) {
+            btn.style.width = "73px";
+            btn.style.height = "58px";
+            d.style.top = "-251px";
+        } else {
+            btn.style.width = "290px";
+            btn.style.height = "360px";
+            d.style.top = "2px";
+        }
 
         open = !open;
-    }else{
-        btn.style.width = "290px";
-        btn.style.height = "377px";
-
-        open = !open;
-    }
     });
 
-    
+    let driveopen = false;
+    let d = document.getElementById('driveBtn');
+
+    d.addEventListener('mouseover', function () {
+
+        if (driveopen) {
+            d.style.width = "73px";
+            d.style.height = "58px";
+        } else {
+            d.style.width = "290px";
+            d.style.height = "360px";
+        }
+
+    });
+
+    d.addEventListener('mouseover', function () {
+
+        if (driveopen) {
+            d.style.width = "290px";
+            d.style.height = "360px";
+        }
+    });
+
+    d.addEventListener('mouseleave', function () {
+
+        if (!driveopen) {
+            d.style.width = "73px";
+            d.style.height = "58px";
+        }
+
+    });
+
+
+    driveBtn.addEventListener('click', function () {
+        if (driveopen) {
+            d.style.width = "73px";
+            d.style.height = "58px";
+        } else {
+            d.style.width = "290px";
+            d.style.height = "360px";
+        }
+        driveopen = !driveopen;
+
+    });
+
+
+
+    btn.addEventListener('mouseover', function () {
+
+        d.style.top = "2px";
+
+        if (!open) {
+            btn.style.width = "290px";
+            btn.style.height = "360px";
+        } else {
+
+        }
+
+    });
+
+
+
+    document.getElementById('open').addEventListener('mouseover', function () {
+        d.style.top = "2px";
+
+        if (!open) {
+            btn.style.width = "290px";
+            btn.style.height = "360px";
+        } 
+
+    });
+
+
+    btn.addEventListener('mouseleave', function () {
+
+        if (!open) {
+            d.style.top = "-251px";
+            btn.style.width = "73px";
+            btn.style.height = "58px";
+        } 
+
+
+
+
+    });
+
+    document.getElementById('open').addEventListener('mouseleave', function () {
+
+        if (!open)
+            d.style.top = "-251px";
+        else
+            d.style.top = "2px";
+
+
+    });
+
 
 }
 
@@ -202,14 +315,12 @@ function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-function goPython(mode , speed){
-   let u = "motorControl.py";
+function goPython(mode, speed) {
+    let u = "motorControl.py";
     $.ajax({
-      url: u,
-     context: document.body
-    }).done(function() {
-     alert('finished python script');;
+        url: u,
+        context: document.body
+    }).done(function () {
+        alert('finished python script');;
     });
 }
-
-    
