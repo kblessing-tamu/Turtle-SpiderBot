@@ -81,6 +81,11 @@ window.onload = function () {
     if (top != "17px") {
         outOpen = !outOpen;
     }
+
+    let pc = true;
+    if (top != "17px") {
+        pc = false;
+    }
     collapse.addEventListener('click', function () {
         let collapse = document.getElementById('collapse');
 
@@ -280,7 +285,7 @@ window.onload = function () {
         if (!open) {
             btn.style.width = "290px";
             btn.style.height = "360px";
-        } 
+        }
 
     });
 
@@ -291,7 +296,7 @@ window.onload = function () {
             d.style.top = "-251px";
             btn.style.width = "73px";
             btn.style.height = "58px";
-        } 
+        }
 
 
 
@@ -307,6 +312,33 @@ window.onload = function () {
 
 
     });
+
+    console.log("touchscreen is", VirtualJoystick.touchScreenAvailable() ? "available" : "not available");
+
+    var joystick = new VirtualJoystick({
+        container: document.getElementById('container'),
+        mouseSupport: true,
+    });
+    joystick.addEventListener('touchStart', function () {
+        console.log('down')
+    });
+    joystick.addEventListener('touchEnd', function () {
+        console.log('up')
+    });
+    if (!pc) {
+        setInterval(function () {
+
+            output.innerHTML += "Forward " + slider.value + "%<br>";
+            output.innerHTML =
+                (joystick.right() && !joystick.up() && !joystick.down() ? "Turing Right " + slider.value + "%<br>" : '') +
+                (joystick.up() ? "Forward " + slider.value + "%<br>" : '') +
+                (joystick.left() && !joystick.up() && !joystick.down() ? "Turning Left " + slider.value + "%<br>" : '') +
+                (joystick.down() ? "Backward " + slider.value + "%<br>" : '') +
+                (!joystick.left()&& !joystick.right() && !joystick.up() && !joystick.down()? "Stopping... <br>" : '')
+
+
+        }, 1 / 30 * 1000);
+    }
 
 
 }

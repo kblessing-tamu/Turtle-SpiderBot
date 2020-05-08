@@ -428,11 +428,42 @@ a:-webkit-any-link{
     right: 0%;
 }
 
+#info {
+    position	: absolute;
+    top		: 0px;
+    width		: 100%;
+    padding		: 5px;
+    text-align	: center;
+}
+#info a {
+    color		: #66F;
+    text-decoration	: none;
+}
+#info a:hover {
+    text-decoration	: underline;
+}
+#container {
+    position: absolute;
+    width: 100%;
+    top: -20vh;
+    height: 57vh;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    -webkit-user-select	: none;
+    -moz-user-select	: none;
+    visibility: hidden;
+}
 
 
 
 @media only screen and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
 
+    #container{
+        visibility: visible;
+        position: absolute;
+        z-index: 5;
+    }
 
     .hint {
         visibility: hidden !important;
