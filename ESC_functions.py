@@ -8,91 +8,62 @@ ESC=4  #Connect the ESC in this GPIO pin
 
 pi = pigpio.pi();
 pi.set_servo_pulsewidth(ESC, 0) 
-
-min_value = 700  #change this if your ESC's min value is different
-max_value = 2000 #change this if your ESC's max value is different
-
-def manual_drive(): #You will use this function to program your ESC if required
-    print("You have selected manual option so give a value between 0 and you max value")
-    while True:  # BS: Fix this dumb loop
-        inp = input()
-        if inp == "stop":
-            stop()
-            break
-        elif inp == "control":
-            control()
-            break
-        elif inp == "arm":
-            arm()
-            break    
-        else:
-            pi.set_servo_pulsewidth(ESC,inp)
                 
-def calibrate():   #This is the auto calibration procedure of a normal ESC
-    pi.set_servo_pulsewidth(ESC, 0)
-    print("Disconnect the battery and press Enter")
-    inp = input()
-    if inp == '':
-        pi.set_servo_pulsewidth(ESC, max_value)
-        print("Connect the battery NOW. you will hear two beeps, then wait for a gradual falling tone then press Enter")
-        inp = input()
-        if inp == '':            
-            pi.set_servo_pulsewidth(ESC, min_value)
-            print("Calibrating. Please wait.")
-            time.sleep(12)
-            pi.set_servo_pulsewidth(ESC, 0)
-            time.sleep(2)
-            pi.set_servo_pulsewidth(ESC, min_value)
-            print("Control set to min value")
-            time.sleep(1)
-            print("Calibration complete"))
-            control() # You can change this to any other function you want
+def calibrate(min_value, max_value):   #This is the auto calibration procedure of a normal ESC
+    print("First, disconnect the battery.")
+    input("Press Enter when disconnected:")
+    pi.set_servo_pulsewidth(ESC, max_value)
+
+    print("Now, plug in the battery. You will hear a series of beeps.")
+    input("Press Enter after 3 beeps:")
+    pi.set_servo_pulsewidth(ESC, min_value)
+
+    print("Wait for this pattern: 2 short beeps, then 2 long beeps.")
+    print("After you hear this pattern, disconnect the battery again.")
+    input("Press Enter when disconnected:")
+
+    print("Now, plug the battery back in.")
+    print("You should hear 3 short beeps, then a low beep and a high beep.")
+    print("If you hear this, then calibration was successful.")
+
             
-def control():  # BS: Fix this awful function
-    print "I'm Starting the motor, I hope its calibrated and armed, if not restart by giving 'x'"
-    time.sleep(1)
-    speed = 1500    # change your speed if you want to.... it should be between 700 - 2000
-    print "Controls - a to decrease speed & d to increase speed OR q to decrease a lot of speed & e to increase a lot of speed"
-    while True:
+def test(min_value, max_value):
+    speed = min_value
+    loop_bool = True
+    print("Controls:")
+    print("a - large decrease    s - small decrease")
+    print("d - small increase    f - large increase")
+    print("q - quit")
+    
+    while loop_bool:
         pi.set_servo_pulsewidth(ESC, speed)
-        inp = input()
+        print("speed = ", speed)
+        inp = input("Input command: ")
         
-        if inp == "q":
+        if inp == "a":
             speed -= 100    # decrementing the speed like hell
-            print "speed = %d" % speed
-        elif inp == "e":    
-            speed += 100    # incrementing the speed like hell
-            print "speed = %d" % speed
+            print("speed = ", speed)
+        elif inp == "s":
+            speed -= 10     # decrementing the speed
+            print("speed = ", speed)
         elif inp == "d":
             speed += 10     # incrementing the speed 
-            print "speed = %d" % speed
-        elif inp == "a":
-            speed -= 10     # decrementing the speed
-            print "speed = %d" % speed
-        elif inp == "stop":
-            stop()          #going for the stop function
-            break
-        elif inp == "manual":
-            manual_drive()
-            break
-        elif inp == "arm":
-            arm()
-            break    
+            print("speed = ", speed)
+        elif inp == "f":    
+            speed += 100    # incrementing the speed like hell
+            print("speed = ", speed)
+        elif inp == "q":
+            speed = 0
+            print("speed = ", speed) 
+            loop_bool = False
         else:
-            print "WHAT DID I SAID!! Press a,q,d or e"
+            print("Invalid input.")
             
-def arm(): #This is the arming procedure of an ESC 
-    print "Connect the battery and press Enter"
-    inp = input()    
-    if inp == '':
-        pi.set_servo_pulsewidth(ESC, 0)
-        time.sleep(1)
-        pi.set_servo_pulsewidth(ESC, max_value)
-        time.sleep(1)
-        pi.set_servo_pulsewidth(ESC, min_value)
-        time.sleep(1)
-        control() 
-        
-def stop(): #This will stop every action your Pi is performing for ESC.
+def arm(min_value, max_value): # This is the arming procedure of an ESC (Is it really???)
+    input("Connect the battery and press Enter")
     pi.set_servo_pulsewidth(ESC, 0)
-    pi.stop()
+    time.sleep(1)
+    pi.set_servo_pulsewidth(ESC, max_value)
+    time.sleep(1)
+    pi.set_servo_pulsewidth(ESC, min_value)
+    time.sleep(1)
