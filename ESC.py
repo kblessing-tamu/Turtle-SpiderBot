@@ -2,7 +2,7 @@
 # Make sure your battery is not connected if you are going to calibrate it at first.
 # Since you are testing your motor, I hope you don't have your propeller attached to it otherwise you are in trouble my friend...?
 
-from ESC_functions import calibrate, arm, test
+from ESC_functions import calibrate, arm, test, help
 
 min_value = 1000  #change this if your ESC's min value is different
 max_value = 2000 #change this if your ESC's max value is different
@@ -24,7 +24,7 @@ while loop_bool:
     elif inp == "3":
         test(min_value, max_value)
     elif inp == "4":
-        # help()
+        help()
         pass # To do: create help function
     elif inp == "5":
         print("Goodbye")
