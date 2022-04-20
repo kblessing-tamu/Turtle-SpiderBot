@@ -3,6 +3,7 @@
 #A class for reading values from an xbox controller
 # uses xboxdrv and pygame
 # xboxdrv should already be running
+# test
 
 import pygame
 from pygame.locals import *
